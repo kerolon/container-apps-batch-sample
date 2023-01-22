@@ -16,14 +16,14 @@ namespace FunctionApp
 
             log.LogInformation($"{myQueueItem} start.");
             log.LogInformation($"{myQueueItem} initialize start. wait about 3sec....");
-            await Task.Delay(3 * r * 1000);
+            await Task.Delay(3 * (1+r) * 1000);
             log.LogInformation($"{myQueueItem} initialize end. wait about 3sec....");
 
             var r2 = rand.Next(0, 1);
 
-            log.LogInformation($"{myQueueItem} execute. wait about 30sec....");
-            await Task.Delay(30 * r2 * 1000);
-            log.LogInformation($"{myQueueItem} execute. wait about 30sec....");
+            log.LogInformation($"{myQueueItem} execute start. wait about 30sec....");
+            await Task.Delay(30 * (1 + r2) * 1000); ;
+            log.LogInformation($"{myQueueItem} execute end. wait about 30sec....");
 
             log.LogInformation($"{myQueueItem} complete.");
         }
